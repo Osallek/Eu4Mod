@@ -1,0 +1,47 @@
+# For specific government types
+# Will pick the first valid one it finds in list
+
+gov_osallek = {
+	rank = {
+		1 = OSALLEK_RANK_1
+		2 = OSALLEK_RANK_2
+		3 = OSALLEK_RANK_3
+		4 = OSALLEK_RANK_4
+		5 = OSALLEK_RANK_5
+		6 = OSALLEK_RANK_6
+		7 = OSALLEK_RANK_7
+		8 = OSALLEK_RANK_8
+		9 = OSALLEK_RANK_9
+		10 = OSALLEK_RANK_10
+	}
+	
+	ruler_male = {
+		1 = OSALLEK
+		2 = OSALLEK
+		3 = OSALLEK
+		4 = OSALLEK
+		5 = OSALLEK
+		6 = OSALLEK
+		7 = OSALLEK
+		8 = OSALLEK
+		9 = OSALLEK
+		10 = OSALLEK
+	}
+	
+	ruler_female = {
+		1 = OSALLEK_fem
+		2 = OSALLEK_fem
+		3 = OSALLEK_fem
+		4 = OSALLEK_fem
+		5 = OSALLEK_fem
+		6 = OSALLEK_fem
+		7 = OSALLEK_fem
+		8 = OSALLEK_fem
+		9 = OSALLEK_fem
+		10 = OSALLEK_fem
+	}
+	
+	trigger = {
+		has_reform = osallek_mechanics
+	}
+}

@@ -1,0 +1,58 @@
+
+osallek = {
+	basic_reform = osallek_mechanics
+
+	color = { 253 215 228 }
+
+	reform_levels = {
+		laune = {
+			reforms = {
+				laune_assassin_reform
+			}
+		}
+		ladeux = {
+			reforms = {
+				better_subjects_reform
+			}
+		}
+		latrois = {
+			reforms = {
+				this_is_sparta_reform
+			}
+		}
+		laquatre = {
+			reforms = {
+				time_is_money_reform
+			}
+		}
+		lacinq = {
+			reforms = {
+				religious_reform
+			}
+		}
+		lasix = {
+			reforms = {
+				melting_pot_reform
+			}
+		}
+		lasept = {
+			reforms = {
+				trading_haute_frequence_reform
+			}
+		}
+		lahuit = {
+			reforms = {
+				wtf_reform
+			}
+		}
+		laneuf = {
+			reforms = {
+				tech_doom_reform
+			}
+		}
+	}
+
+	legacy_government = {
+		administrative_monarchy
+	}
+}

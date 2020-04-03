@@ -1,0 +1,158 @@
+
+osallek_mechanics = {
+	monarchy = yes
+	heir = yes
+	queen = yes
+	basic_reform = yes # = invisible/does not take up a slot
+	valid_for_nation_designer = no
+	maintain_dynasty = yes
+	claim_states = yes
+	custom_attributes = {
+		enables_aristocratic_idea_group = yes
+	}
+	modifiers = {
+		monarch_admin_power = 1
+		monarch_diplomatic_power = 1
+		monarch_military_power = 1
+	}
+}
+
+laune_assassin_reform = {
+	icon = "peacock_throne"
+	allow_normal_conversion = yes
+	legacy_equivalent = feudal_monarchy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		global_unrest = -3
+		advisor_cost = -0.25
+		female_advisor_chance = 1.0
+		legitimacy = 0.5
+		global_autonomy = -0.1
+	}
+}
+
+better_subjects_reform = {
+	icon = "revolutionary_republic"
+	allow_normal_conversion = yes
+	legacy_equivalent = feudal_monarchy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		liberty_desire_from_subject_development = -0.50
+		vassal_forcelimit_bonus = 2.5
+		vassal_income = 0.1
+		administrative_efficiency = 0.2
+		max_states = 7
+	}
+}
+
+this_is_sparta_reform = {
+	icon = "soldiers_5"
+	allow_normal_conversion = yes
+	legacy_equivalent = feudal_monarchy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		discipline = 0.1
+		artillery_bonus_vs_fort = 1
+		fire_damage = 0.1
+		land_morale = 0.1
+		army_tradition = 2
+		global_manpower_modifier = 0.4
+		manpower_recovery_speed = 0.4
+	}
+}
+
+trading_haute_frequence_reform = {
+	icon = "merchant"
+	allow_normal_conversion = yes
+	legacy_equivalent = feudal_monarchy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		trade_efficiency = 0.15
+		trade_steering = 0.2
+		merchants = 2
+	}
+}
+
+religious_reform = {
+	icon = "religious_leader"
+	allow_normal_conversion = yes
+	legacy_equivalent = feudal_monarchy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		missionary_maintenance_cost = -0.25
+		missionaries = 1
+		papal_influence = 2.0
+		prestige = 5
+		advisor_cost = -0.30
+	}
+}
+
+melting_pot_reform = {
+	icon = "parliament"
+	allow_normal_conversion = yes
+	legacy_equivalent = feudal_monarchy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		promote_culture_cost = -0.25
+		culture_conversion_cost = 0.33
+		num_accepted_cultures = 4
+		possible_policy = 2
+		free_adm_policy = 1
+		free_dip_policy = 1
+		free_mil_policy = 1
+	}
+}
+
+time_is_money_reform = {
+	icon = "black_market_consortium"
+	allow_normal_conversion = yes
+	legacy_equivalent = feudal_monarchy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		global_tax_modifier = 0.1
+		production_efficiency = 0.1
+		administrative_efficiency = 0.2
+		build_time = -0.99
+		inflation_reduction = 0.3
+		build_cost = -0.5
+	}
+}
+
+wtf_reform = {
+	icon = "soldiers_6"
+	allow_normal_conversion = yes
+	legacy_equivalent = feudal_monarchy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		movement_speed = 1.0
+		global_manpower_modifier = 0.5
+		global_regiment_recruit_speed = -0.99
+		global_supply_limit_modifier = 3.0
+		hostile_attrition = 3
+		army_tradition_decay = -0.1
+		yearly_army_professionalism = 0.01
+	}
+}
+
+tech_doom_reform = {
+	icon = "war_against_the_world"
+	allow_normal_conversion = yes
+	legacy_equivalent = feudal_monarchy
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	modifiers = {
+		all_power_cost = -0.2
+		embracement_cost = -0.5
+		max_absolutism = 25
+		yearly_absolutism = 1
+		land_forcelimit_modifier = 0.5
+	}
+}

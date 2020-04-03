@@ -1,0 +1,27 @@
+4 = {
+	max_states = 10
+}
+
+5 = {
+	max_states = 10
+}
+
+6 = {
+	max_states = 10
+}
+
+7 = {
+	max_states = 10
+}
+
+8 = {
+	max_states = 10
+}
+
+9 = {
+	max_states = 10
+}
+
+10 = {
+	max_states = 10
+}
