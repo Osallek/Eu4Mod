@@ -60,3 +60,12 @@ osallek_missions_1_10_modifier = {
 	max_states = 20
 	global_autonomy = -0.05
 }
+
+osallek_missions_2_8_modifier = {
+	leader_land_shock = 1
+	leader_land_fire = 1
+	general_cost = -0.1
+	leader_naval_fire = 1
+	leader_naval_shock = 1
+	leader_siege = 1
+}
