@@ -62,6 +62,13 @@ osallek_missions_1_10_modifier = {
 }
 
 osallek_missions_2_8_modifier = {
+	land_forcelimit_modifier = 0.25
+	naval_forcelimit_modifier = 0.25
+	global_ship_cost = -0.1
+	global_regiment_cost = -0.1
+}
+
+osallek_missions_2_9_modifier = {
 	leader_land_shock = 1
 	leader_land_fire = 1
 	general_cost = -0.1
