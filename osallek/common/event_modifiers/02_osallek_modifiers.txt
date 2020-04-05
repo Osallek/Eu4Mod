@@ -61,6 +61,19 @@ osallek_missions_1_10_modifier = {
 	global_autonomy = -0.05
 }
 
+osallek_missions_2_3_modifier = {
+	drill_gain_modifier = 0.1
+	drill_decay_modifier = -0.1
+}
+
+osallek_missions_2_5_modifier = {
+	leader_land_shock = 1
+}
+
+osallek_missions_2_6_modifier = {
+	fabricate_claims_cost= -0.2
+}
+
 osallek_missions_2_8_modifier = {
 	land_forcelimit_modifier = 0.25
 	naval_forcelimit_modifier = 0.25
@@ -75,4 +88,41 @@ osallek_missions_2_9_modifier = {
 	leader_naval_fire = 1
 	leader_naval_shock = 1
 	leader_siege = 1
+}
+
+osallek_missions_3_1_modifier = {
+	all_power_cost = -0.05
+}
+
+osallek_missions_3_3_modifier = {
+	ae_impact = -0.2
+}
+
+osallek_missions_3_4_modifier = {
+	manpower_recovery_speed = 0.2
+}
+
+osallek_missions_3_5_modifier = {
+	interest = -1
+}
+
+osallek_missions_3_6_modifier = {
+	yearly_corruption = -0.05
+	inflation_reduction = 0.05
+}
+
+osallek_missions_3_7_modifier = {
+	war_exhaustion = -0.05
+}
+
+osallek_missions_3_8_modifier = {
+	reduced_liberty_desire = 15
+}
+
+osallek_missions_3_9_modifier = {
+	core_creation = -0.5
+}
+
+osallek_missions_3_10_modifier = {
+	movement_speed = 1
 }

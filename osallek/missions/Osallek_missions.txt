@@ -204,7 +204,7 @@ osallek_missions_1 = {
 	}
 							
 	osallek_missions_1_8 = {
-		icon = mission_luther_theses
+		icon = mission_court_education
 		required_missions = { osallek_missions_1_7 }
 		position = 8
 		completed_by = 1445.1.1
@@ -296,9 +296,26 @@ osallek_missions_2 = {
 		}
 		
 		effect = {
-			add_country_modifier = {
-				name = "osallek_missions_1_2_modifier"
-				duration = -1
+			capital_scope = {
+				random_list = {
+					50 = {
+						add_base_tax = 1
+						add_base_production = 1
+						add_base_manpower = 1
+					}
+					50 = {
+						add_base_tax = 2
+						add_base_production = 2
+					add_base_manpower = 2
+					}
+				}
+				area = {
+					limit = { owned_by = ROOT }
+					add_province_modifier = {
+						name = "growth_of_capital"
+						duration = 9125 #25 years
+					}
+				}
 			}
 		}
 	}
@@ -317,8 +334,8 @@ osallek_missions_2 = {
 		
 		effect = {
 			add_country_modifier = {
-				name = "osallek_missions_1_2_modifier"
-				duration = -1
+				name = "osallek_missions_2_3_modifier"
+				duration = 7300
 			}
 		}
 	}
@@ -345,8 +362,8 @@ osallek_missions_2 = {
 		
 		effect = {
 			add_country_modifier = {
-				name = "osallek_missions_1_2_modifier"
-				duration = -1
+				name = "osallek_missions_2_5_modifier"
+				duration = 7300
 			}
 		}
 	}
@@ -367,7 +384,7 @@ osallek_missions_2 = {
 		
 		effect = {
 			add_country_modifier = {
-				name = "osallek_missions_1_2_modifier"
+				name = "osallek_missions_2_6_modifier"
 				duration = -1
 			}
 		}
@@ -399,9 +416,9 @@ osallek_missions_2 = {
 	}
 			
 	osallek_missions_2_9 = {
-		icon = mission_cannons_firing
+		icon = mission_rb_a_mighty_fleet
 		required_missions = { osallek_missions_2_8 }
-		position = 8
+		position = 9
 		completed_by = 1445.1.1
 		
 		trigger = {
@@ -480,66 +497,77 @@ osallek_missions_3 = {
 	}
 	
 	osallek_missions_3_1 = {
-		icon = mission_junk_boat
+		icon = mission_this_is_fine
 		required_missions = {  }
 		position = 1
 		completed_by = 1445.1.1
 		
 		trigger = {
-			AND = {
-				NOT = {
-					dip_power = 1
-				}
-				NOT = {
-					adm_power = 1
-				}
-				NOT = {
-					mil_power = 1
-				}
+			NOT = {
+				dip_power = 1
+			}
+			NOT = {
+				adm_power = 1
+			}
+			NOT = {
+				mil_power = 1
 			}
 		}
 		
 		effect = {
 			add_country_modifier = {
-				name = "osallek_missions_1_1_modifier"
-				duration = 7300 #20 years
+				name = "osallek_missions_3_1_modifier"
+				duration = 3650 #10 years
 			}
 		}
 	}
 	
 	osallek_missions_3_2 = {
-		icon = mission_junk_boat
+		icon = mission_this_is_fine
 		required_missions = { osallek_missions_3_1 }
 		position = 2
 		completed_by = 1445.1.1
 		
 		trigger = {
-			AND = {
-				dip = 0
-				NOT = {
-					dip = 2
-				}
-				adm = 0
-				NOT = {
-					adm = 2
-				}
-				mil = 0
-				NOT = {
-					mil = 2
-				}
+			dip = 0
+			NOT = {
+				dip = 2
+			}
+			adm = 0
+			NOT = {
+				adm = 2
+			}
+			mil = 0
+			NOT = {
+				mil = 2
 			}
 		}
 		
 		effect = {
-			add_country_modifier = {
-				name = "osallek_missions_1_1_modifier"
-				duration = 7300 #20 years
+			if = {
+				limit = {
+					has_heir = no
+				}
+				define_heir = {
+					age = 15
+					dynasty = PREV
+					culture = PREV
+					religion = PREV
+					female = yes
+					adm = 3
+					dip = 3
+					mil = 3
+					max_random_adm = 3
+					max_random_dip = 3
+					max_random_mil = 3
+				}
 			}
+			kill_ruler = yes
 		}
 	}
 	
 	osallek_missions_3_3 = {
-		icon = mission_junk_boat
+		icon = mission_this_is_fine
 		required_missions = { osallek_missions_3_2 }
 		position = 3
 		completed_by = 1445.1.1
@@ -550,73 +578,197 @@ osallek_missions_3 = {
 		
 		effect = {
 			add_country_modifier = {
-				name = "osallek_missions_1_1_modifier"
+				name = "osallek_missions_3_3_modifier"
 				duration = 7300 #20 years
 			}
 		}
 	}
 	
-	osallek_missions_3_10 = {
-		icon = mission_junk_boat
-		required_missions = {  }
-		position = 10
+	osallek_missions_3_4 = {
+        icon = mission_this_is_fine
+        required_missions = { osallek_missions_3_3 }
+        position = 4
+        completed_by = 1445.1.1
+
+        trigger = {
+            NOT = {
+                manpower = 1
+            }
+            is_in_war = {
+                attacker_leader = ROOT
+                duration = 1825
+            }
+			NOT = {
+				war_score = -10
+			}
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = "osallek_missions_3_4_modifier"
+                duration = 7300 #20 years
+            }
+        }
+    }
+			
+	osallek_missions_3_5 = {
+		icon = mission_this_is_fine
+		required_missions = { osallek_missions_3_4 }
+		position = 5
 		completed_by = 1445.1.1
 		
 		trigger = {
-			AND = {
-				is_bankrupt = yes
-				is_at_war = yes
-				inflation = 20
-				corruption = 20
-				war_exhaustion = 20
-				num_of_loans = 10
-				num_of_rebel_armies = 3
-				NOT = {
-					manpower = 1
-				}
-				NOT = {
-					years_of_income = 1
-				}
-				is_in_war = {
-					attacker_leader = ROOT
-					duration = 1825
-				}
-				NOT = {
-					prestige = 0
-				}
+			NOT = {
+				years_of_income = 1
 			}
+			num_of_loans = 10
 		}
 		
 		effect = {
 			add_country_modifier = {
-				name = "osallek_missions_1_1_modifier"
-				duration = -1
+				name = "osallek_missions_3_5_modifier"
+				duration = 7300 #20 years
+			}
+		}
+	}
+				
+	osallek_missions_3_6 = {
+		icon = mission_this_is_fine
+		required_missions = { osallek_missions_3_5 }
+		position = 6
+		completed_by = 1445.1.1
+		
+		trigger = {
+			inflation = 20
+			corruption = 20
+		}
+		
+		effect = {
+			add_inflation = -10
+			add_corruption = -10
+			add_country_modifier = {
+				name = "osallek_missions_3_6_modifier"
+				duration = 7300 #20 years
+			}
+		}
+	}
+					
+	osallek_missions_3_7 = {
+		icon = mission_this_is_fine
+		required_missions = { osallek_missions_3_6 }
+		position = 7
+		completed_by = 1445.1.1
+		
+		trigger = {
+			war_exhaustion = 20
+			num_of_rebel_armies = 3
+		}
+		
+		effect = {
+			add_war_exhaustion = -10
+			add_country_modifier = {
+				name = "osallek_missions_3_7_modifier"
+				duration = 7300 #20 years
 			}
 		}
 	}
 	
-	osallek_missions_3_11 = {
-		icon = mission_empire
-		required_missions = { 
-			osallek_missions_1_10
-			osallek_missions_2_10
-			osallek_missions_3_10
-			osallek_missions_5_10
-		}
-		position = 11
+	osallek_missions_3_8 = {
+		icon = mission_this_is_fine
+		required_missions = { osallek_missions_3_7 }
+		position = 8
 		completed_by = 1445.1.1
 		
 		trigger = {
-			government_rank = 10
+			all_subject_country = {
+				liberty_desire = 90
+			}
+			num_of_subjects = 1
 		}
 		
 		effect = {
 			add_country_modifier = {
-				name = "osallek_missions_1_2_modifier"
-				duration = -1
+				name = "osallek_missions_3_8_modifier"
+				duration = 3650 #10 years
 			}
 		}
 	}
+	
+	osallek_missions_3_9 = {
+		icon = mission_this_is_fine
+		required_missions = { osallek_missions_3_8 }
+		position = 9
+		completed_by = 1445.1.1
+		
+		trigger = {
+			overextension_percentage = 1.5
+			has_global_modifier_value = {
+				which = global_unrest
+				value = 5
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "osallek_missions_3_9_modifier"
+				duration = 365 #1 year
+			}
+		}
+	}
+		
+	osallek_missions_3_10 = {
+		icon = mission_this_is_fine
+		required_missions = { osallek_missions_3_9 }
+		position = 10
+		completed_by = 1445.1.1
+		
+		trigger = {
+			is_in_war = {
+				attacker_leader = ROOT
+			}
+			NOT = {
+				war_score = -10
+			}
+			is_bankrupt = true
+		}
+		
+		effect = {
+            add_country_modifier = {
+                name = "osallek_missions_3_10_modifier"
+                duration = 3650 #1 year
+            }
+			capital_scope = {
+				add_unit_construction = {
+					amount = 50
+					type = infantry
+					speed = 0.1
+					cost = 0
+				}
+			}
+		}
+	}
+	osallek_missions_3_11 = {
+        icon = mission_empire
+        required_missions = { 
+            osallek_missions_1_10
+            osallek_missions_2_10
+            osallek_missions_3_10
+            osallek_missions_5_10
+        }
+        position = 11
+        completed_by = 1445.1.1
+
+        trigger = {
+            government_rank = 10
+        }
+
+        effect = {
+            add_country_modifier = {
+                name = "osallek_missions_1_2_modifier"
+                duration = -1
+            }
+        }
+    }
 }
 
 osallek_missions_5 = {
@@ -636,34 +788,32 @@ osallek_missions_5 = {
 		completed_by = 1445.1.1
 		
 		trigger = {
-			AND = {
-				OR = {
-					philosopher = 1
-					natural_scientist = 1
-					artist = 1
-					treasurer = 1
-					theologian = 1
-					master_of_mint = 1
-					inquisitor = 1
-				}
-				OR = {
-					statesman = 1
-					naval_reformer = 1
-					trader = 1
-					spymaster = 1
-					colonial_governor = 1
-					diplomat = 1
-					navigator = 1
-				}
-				OR = {
-					army_reformer = 1
-					army_organiser = 1
-					commandant = 1
-					quartermaster = 1
-					recruitmaster = 1
-					fortification_expert = 1
-					grand_captain = 1
-				}
+			OR = {
+				philosopher = 1
+				natural_scientist = 1
+				artist = 1
+				treasurer = 1
+				theologian = 1
+				master_of_mint = 1
+				inquisitor = 1
+			}
+			OR = {
+				statesman = 1
+				naval_reformer = 1
+				trader = 1
+				spymaster = 1
+				colonial_governor = 1
+				diplomat = 1
+				navigator = 1
+			}
+			OR = {
+				army_reformer = 1
+				army_organiser = 1
+				commandant = 1
+				quartermaster = 1
+				recruitmaster = 1
+				fortification_expert = 1
+				grand_captain = 1
 			}
 		}
 		
@@ -682,34 +832,32 @@ osallek_missions_5 = {
 		completed_by = 1445.1.1
 		
 		trigger = {
-			AND = {
-				OR = {
-					philosopher = 2
-					natural_scientist = 2
-					artist = 2
-					treasurer = 2
-					theologian = 2
-					master_of_mint = 2
-					inquisitor = 2
-				}
-				OR = {
-					statesman = 2
-					naval_reformer = 2
-					trader = 2
-					spymaster = 2
-					colonial_governor = 2
-					diplomat = 2
-					navigator = 2
-				}
-				OR = {
-					army_reformer = 2
-					army_organiser = 2
-					commandant = 2
-					quartermaster = 2
-					recruitmaster = 2
-					fortification_expert = 2
-					grand_captain = 2
-				}
+			OR = {
+				philosopher = 2
+				natural_scientist = 2
+				artist = 2
+				treasurer = 2
+				theologian = 2
+				master_of_mint = 2
+				inquisitor = 2
+			}
+			OR = {
+				statesman = 2
+				naval_reformer = 2
+				trader = 2
+				spymaster = 2
+				colonial_governor = 2
+				diplomat = 2
+				navigator = 2
+			}
+			OR = {
+				army_reformer = 2
+				army_organiser = 2
+				commandant = 2
+				quartermaster = 2
+				recruitmaster = 2
+				fortification_expert = 2
+				grand_captain = 2
 			}
 		}
 		
@@ -728,34 +876,32 @@ osallek_missions_5 = {
 		completed_by = 1445.1.1
 		
 		trigger = {
-			AND = {
-				OR = {
-					philosopher = 3
-					natural_scientist = 3
-					artist = 3
-					treasurer = 3
-					theologian = 3
-					master_of_mint = 3
-					inquisitor = 3
-				}
-				OR = {
-					statesman = 3
-					naval_reformer = 3
-					trader = 3
-					spymaster = 3
-					colonial_governor = 3
-					diplomat = 3
-					navigator = 3
-				}
-				OR = {
-					army_reformer = 3
-					army_organiser = 3
-					commandant = 3
-					quartermaster = 3
-					recruitmaster = 3
-					fortification_expert = 3
-					grand_captain = 3
-				}
+			OR = {
+				philosopher = 3
+				natural_scientist = 3
+				artist = 3
+				treasurer = 3
+				theologian = 3
+				master_of_mint = 3
+				inquisitor = 3
+			}
+			OR = {
+				statesman = 3
+				naval_reformer = 3
+				trader = 3
+				spymaster = 3
+				colonial_governor = 3
+				diplomat = 3
+				navigator = 3
+			}
+			OR = {
+				army_reformer = 3
+				army_organiser = 3
+				commandant = 3
+				quartermaster = 3
+				recruitmaster = 3
+				fortification_expert = 3
+				grand_captain = 3
 			}
 		}
 		
@@ -774,34 +920,32 @@ osallek_missions_5 = {
 		completed_by = 1445.1.1
 		
 		trigger = {
-			AND = {
-				OR = {
-					philosopher = 4
-					natural_scientist = 4
-					artist = 4
-					treasurer = 4
-					theologian = 4
-					master_of_mint = 4
-					inquisitor = 4
-				}
-				OR = {
-					statesman = 4
-					naval_reformer = 4
-					trader = 4
-					spymaster = 4
-					colonial_governor = 4
-					diplomat = 4
-					navigator = 4
-				}
-				OR = {
-					army_reformer = 4
-					army_organiser = 4
-					commandant = 4
-					quartermaster = 4
-					recruitmaster = 4
-					fortification_expert = 4
-					grand_captain = 4
-				}
+			OR = {
+				philosopher = 4
+				natural_scientist = 4
+				artist = 4
+				treasurer = 4
+				theologian = 4
+				master_of_mint = 4
+				inquisitor = 4
+			}
+			OR = {
+				statesman = 4
+				naval_reformer = 4
+				trader = 4
+				spymaster = 4
+				colonial_governor = 4
+				diplomat = 4
+				navigator = 4
+			}
+			OR = {
+				army_reformer = 4
+				army_organiser = 4
+				commandant = 4
+				quartermaster = 4
+				recruitmaster = 4
+				fortification_expert = 4
+				grand_captain = 4
 			}
 		}
 	
@@ -814,40 +958,38 @@ osallek_missions_5 = {
 	}
 	
 	osallek_missions_5_5 = {
-		icon = mission_religious
+		icon = mission_deccanis
 		required_missions = { osallek_missions_5_4 }
 		position = 5
 		completed_by = 1445.1.1
 		
 		trigger = {
-			AND = {
-				OR = {
-					philosopher = 5
-					natural_scientist = 5
-					artist = 5
-					treasurer = 5
-					theologian = 5
-					master_of_mint = 5
-					inquisitor = 5
-				}
-				OR = {
-					statesman = 5
-					naval_reformer = 5
-					trader = 5
-					spymaster = 5
-					colonial_governor = 5
-					diplomat = 5
-					navigator = 5
-				}
-				OR = {
-					army_reformer = 5
-					army_organiser = 5
-					commandant = 5
-					quartermaster = 5
-					recruitmaster = 5
-					fortification_expert = 5
-					grand_captain = 5
-				}
+			OR = {
+				philosopher = 5
+				natural_scientist = 5
+				artist = 5
+				treasurer = 5
+				theologian = 5
+				master_of_mint = 5
+				inquisitor = 5
+			}
+			OR = {
+				statesman = 5
+				naval_reformer = 5
+				trader = 5
+				spymaster = 5
+				colonial_governor = 5
+				diplomat = 5
+				navigator = 5
+			}
+			OR = {
+				army_reformer = 5
+				army_organiser = 5
+				commandant = 5
+				quartermaster = 5
+				recruitmaster = 5
+				fortification_expert = 5
+				grand_captain = 5
 			}
 		}
 
@@ -860,40 +1002,38 @@ osallek_missions_5 = {
 	}
 	
 	osallek_missions_5_6 = {
-		icon = mission_buddhist_monk_praying
+		icon = mission_embassy_to_the_west
 		required_missions = { osallek_missions_5_5 }
 		position = 6
 		completed_by = 1445.1.1
 		
 		trigger = {
-			AND = {
-				OR = {
-					philosopher = 6
-					natural_scientist = 6
-					artist = 6
-					treasurer = 6
-					theologian = 6
-					master_of_mint = 6
-					inquisitor = 6
-				}
-				OR = {
-					statesman = 6
-					naval_reformer = 6
-					trader = 6
-					spymaster = 6
-					colonial_governor = 6
-					diplomat = 6
-					navigator = 6
-				}
-				OR = {
-					army_reformer = 6
-					army_organiser = 6
-					commandant = 6
-					quartermaster = 6
-					recruitmaster = 6
-					fortification_expert = 6
-					grand_captain = 6
-				}
+			OR = {
+				philosopher = 6
+				natural_scientist = 6
+				artist = 6
+				treasurer = 6
+				theologian = 6
+				master_of_mint = 6
+				inquisitor = 6
+			}
+			OR = {
+				statesman = 6
+				naval_reformer = 6
+				trader = 6
+				spymaster = 6
+				colonial_governor = 6
+				diplomat = 6
+				navigator = 6
+			}
+			OR = {
+				army_reformer = 6
+				army_organiser = 6
+				commandant = 6
+				quartermaster = 6
+				recruitmaster = 6
+				fortification_expert = 6
+				grand_captain = 6
 			}
 		}
 
@@ -912,34 +1052,32 @@ osallek_missions_5 = {
 		completed_by = 1445.1.1
 		
 		trigger = {
-			AND = {
-				OR = {
-					philosopher = 7
-					natural_scientist = 7
-					artist = 7
-					treasurer = 7
-					theologian = 7
-					master_of_mint = 7
-					inquisitor = 7
-				}
-				OR = {
-					statesman = 7
-					naval_reformer = 7
-					trader = 7
-					spymaster = 7
-					colonial_governor = 7
-					diplomat = 7
-					navigator = 7
-				}
-				OR = {
-					army_reformer = 7
-					army_organiser = 7
-					commandant = 7
-					quartermaster = 7
-					recruitmaster = 7
-					fortification_expert = 7
-					grand_captain = 7
-				}
+			OR = {
+				philosopher = 7
+				natural_scientist = 7
+				artist = 7
+				treasurer = 7
+				theologian = 7
+				master_of_mint = 7
+				inquisitor = 7
+			}
+			OR = {
+				statesman = 7
+				naval_reformer = 7
+				trader = 7
+				spymaster = 7
+				colonial_governor = 7
+				diplomat = 7
+				navigator = 7
+			}
+			OR = {
+				army_reformer = 7
+				army_organiser = 7
+				commandant = 7
+				quartermaster = 7
+				recruitmaster = 7
+				fortification_expert = 7
+				grand_captain = 7
 			}
 		}
 
@@ -958,34 +1096,32 @@ osallek_missions_5 = {
 		completed_by = 1445.1.1
 		
 		trigger = {
-			AND = {
-				OR = {
-					philosopher = 8
-					natural_scientist = 8
-					artist = 8
-					treasurer = 8
-					theologian = 8
-					master_of_mint = 8
-					inquisitor = 8
-				}
-				OR = {
-					statesman = 8
-					naval_reformer = 8
-					trader = 8
-					spymaster = 8
-					colonial_governor = 8
-					diplomat = 8
-					navigator = 8
-				}
-				OR = {
-					army_reformer = 8
-					army_organiser = 8
-					commandant = 8
-					quartermaster = 8
-					recruitmaster = 8
-					fortification_expert = 8
-					grand_captain = 8
-				}
+			OR = {
+				philosopher = 8
+				natural_scientist = 8
+				artist = 8
+				treasurer = 8
+				theologian = 8
+				master_of_mint = 8
+				inquisitor = 8
+			}
+			OR = {
+				statesman = 8
+				naval_reformer = 8
+				trader = 8
+				spymaster = 8
+				colonial_governor = 8
+				diplomat = 8
+				navigator = 8
+			}
+			OR = {
+				army_reformer = 8
+				army_organiser = 8
+				commandant = 8
+				quartermaster = 8
+				recruitmaster = 8
+				fortification_expert = 8
+				grand_captain = 8
 			}
 		}
 
@@ -1004,34 +1140,32 @@ osallek_missions_5 = {
 		completed_by = 1445.1.1
 		
 		trigger = {
-			AND = {
-				OR = {
-					philosopher = 9
-					natural_scientist = 9
-					artist = 9
-					treasurer = 9
-					theologian = 9
-					master_of_mint = 9
-					inquisitor = 9
-				}
-				OR = {
-					statesman = 9
-					naval_reformer = 9
-					trader = 9
-					spymaster = 9
-					colonial_governor = 9
-					diplomat = 9
-					navigator = 9
-				}
-				OR = {
-					army_reformer = 9
-					army_organiser = 9
-					commandant = 9
-					quartermaster = 9
-					recruitmaster = 9
-					fortification_expert = 9
-					grand_captain = 9
-				}
+			OR = {
+				philosopher = 9
+				natural_scientist = 9
+				artist = 9
+				treasurer = 9
+				theologian = 9
+				master_of_mint = 9
+				inquisitor = 9
+			}
+			OR = {
+				statesman = 9
+				naval_reformer = 9
+				trader = 9
+				spymaster = 9
+				colonial_governor = 9
+				diplomat = 9
+				navigator = 9
+			}
+			OR = {
+				army_reformer = 9
+				army_organiser = 9
+				commandant = 9
+				quartermaster = 9
+				recruitmaster = 9
+				fortification_expert = 9
+				grand_captain = 9
 			}
 		}
 
@@ -1050,34 +1184,32 @@ osallek_missions_5 = {
 		completed_by = 1445.1.1
 		
 		trigger = {
-			AND = {
-				OR = {
-					philosopher = 10
-					natural_scientist = 10
-					artist = 10
-					treasurer = 10
-					theologian = 10
-					master_of_mint = 10
-					inquisitor = 10
-				}
-				OR = {
-					statesman = 10
-					naval_reformer = 10
-					trader = 10
-					spymaster = 10
-					colonial_governor = 10
-					diplomat = 10
-					navigator = 10
-				}
-				OR = {
-					army_reformer = 10
-					army_organiser = 10
-					commandant = 10
-					quartermaster = 10
-					recruitmaster = 10
-					fortification_expert = 10
-					grand_captain = 10
-				}
+			OR = {
+				philosopher = 10
+				natural_scientist = 10
+				artist = 10
+				treasurer = 10
+				theologian = 10
+				master_of_mint = 10
+				inquisitor = 10
+			}
+			OR = {
+				statesman = 10
+				naval_reformer = 10
+				trader = 10
+				spymaster = 10
+				colonial_governor = 10
+				diplomat = 10
+				navigator = 10
+			}
+			OR = {
+				army_reformer = 10
+				army_organiser = 10
+				commandant = 10
+				quartermaster = 10
+				recruitmaster = 10
+				fortification_expert = 10
+				grand_captain = 10
 			}
 		}
 
