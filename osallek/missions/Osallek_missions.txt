@@ -779,6 +779,7 @@ osallek_missions_4_catho = {
 	
 	potential = {
 		religion = catholic
+		has_reform = osallek_mechanics
 	}
 	
 	osallek_missions_4_catho_1 = {
@@ -1038,6 +1039,7 @@ osallek_missions_4_sikh = {
 	
 	potential = {
 		religion = sikhism
+		has_reform = osallek_mechanics
 	}
 	
 	osallek_missions_4_sikh_1 = {
@@ -1047,11 +1049,17 @@ osallek_missions_4_sikh = {
 		completed_by = 1445.1.1
 		
 		trigger = {
-			papacy_active = yes
-			papal_influence = 50
-			reverse_has_opinion = {
-				who = PAP
-				value = 100
+			any_country = {
+				limit = {
+					NOT = {
+						tag = ROOT
+					}
+				}
+				religion = sikhism
+				has_opinion = {
+					who = ROOT
+					value = 50
+				}
 			}
 		}
 		
@@ -1070,9 +1078,9 @@ osallek_missions_4_sikh = {
 		completed_by = 1445.1.1
 		
 		trigger = {
-			OR = {
-				is_papal_controller = yes
-				invested_papal_influence = 50
+			any_subject_country = {
+				religion_group_claim = ROOT
+				is_force_converted = yes
 			}
 		}
 		
@@ -1131,6 +1139,12 @@ osallek_missions_4_sikh = {
 		completed_by = 1445.1.1
 		
 		trigger = {
+			calc_true_if = {
+				all_country = {
+					religion = sikhism
+				}
+				amount = 10
+			}
 		}
 		
 		effect = {
