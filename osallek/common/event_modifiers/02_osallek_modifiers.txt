@@ -126,3 +126,34 @@ osallek_missions_3_9_modifier = {
 osallek_missions_3_10_modifier = {
 	movement_speed = 1
 }
+
+osallek_missions_4_sikh_1_modifier = {
+	diplomatic_reputation = 1
+	tolerance_own = 1
+}
+
+osallek_missions_4_sikh_3_modifier = {
+	global_heretic_missionary_strength = 0.03
+}
+
+osallek_missions_4_sikh_4_modifier = {
+	enforce_religion_cost = -0.5
+}
+
+osallek_missions_4_sikh_5_modifier = {
+	tolerance_heretic = 1
+	tolerance_heathen = 1
+}
+
+osallek_missions_4_sikh_7_modifier = {
+	ae_impact = -0.15
+}
+
+osallek_missions_4_sikh_8_modifier = {
+	global_heretic_missionary_strength = 0.03
+	missionary_maintenance_cost = -0.25
+}
+
+osallek_missions_4_sikh_9_modifier = {
+	prestige = 0.5
+}
