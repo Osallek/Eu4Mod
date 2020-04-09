@@ -42,7 +42,7 @@ better_subjects_reform = {
 		liberty_desire_from_subject_development = -0.50
 		vassal_forcelimit_bonus = 2.5
 		vassal_income = 0.1
-		administrative_efficiency = 0.2
+		stability_cost_modifier = -0.2
 		max_states = 7
 	}
 }
@@ -100,7 +100,7 @@ melting_pot_reform = {
 	nation_designer_cost = 0
 	modifiers = {
 		promote_culture_cost = -0.25
-		culture_conversion_cost = 0.33
+		culture_conversion_cost = -0.33
 		num_accepted_cultures = 4
 		possible_policy = 2
 		free_adm_policy = 1
@@ -118,7 +118,7 @@ time_is_money_reform = {
 	modifiers = {
 		global_tax_modifier = 0.1
 		production_efficiency = 0.1
-		administrative_efficiency = 0.2
+		global_autonomy = -0.1
 		build_time = -0.99
 		inflation_reduction = 0.3
 		build_cost = -0.5
