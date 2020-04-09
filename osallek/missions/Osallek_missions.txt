@@ -45,7 +45,7 @@ osallek_missions_1 = {
 				march = 2
 				personal_union = 1
 			}
-			diplomatic_reputation = 5
+			diplomatic_reputation = 3
 		}
 		
 		effect = {
@@ -504,13 +504,13 @@ osallek_missions_3 = {
 		
 		trigger = {
 			NOT = {
-				dip_power = 1
+				dip_power = 2
 			}
 			NOT = {
-				adm_power = 1
+				adm_power = 2
 			}
 			NOT = {
-				mil_power = 1
+				mil_power = 2
 			}
 		}
 		
