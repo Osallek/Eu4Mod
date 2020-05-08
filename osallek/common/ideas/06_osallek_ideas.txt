@@ -1,0 +1,87 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+### Nation specific idea groups
+
+SSS_ideas = {
+	start = {
+		may_recruit_female_generals = yes
+		land_morale = 0.4
+	}
+
+	bonus = {
+		discipline = 0.2
+	}
+	
+	trigger = {
+		tag = D00
+	}
+	free = yes
+	
+	sss_1 = {
+		production_efficiency = 0.4
+	}
+	sss_2 = {
+		global_tax_modifier = 0.4
+	}
+	sss_3 = {
+		fort_maintenance_modifier = -0.4
+		land_maintenance_modifier = -0.4
+	}
+	sss_4 = {
+		merchants = 8
+	}
+	sss_5 = {
+		development_cost = -0.4
+		administrative_efficiency = 0.4
+	}
+	sss_6 = {
+		siege_ability = 0.4
+	}
+	sss_7 = {
+		trade_steering = 1
+		trade_efficiency = 0.4
+	}
+}
+
+MEL_ideas = {
+	start = {
+		may_recruit_female_generals = yes
+		land_morale = 0.4
+	}
+
+	bonus = {
+		discipline = 0.2
+	}
+	
+	trigger = {
+		tag = D01
+	}
+	free = yes
+	
+	mel_1 = {
+		fort_maintenance_modifier = -0.4
+		siege_ability = 0.4
+	}
+	mel_2 = {
+		global_tax_modifier = 0.4
+	}
+	mel_3 = {
+		production_efficiency = 0.4
+	}
+	mel_4 = {
+		trade_efficiency = 0.4
+	}
+	mel_5 = {
+		development_cost = -0.4
+		administrative_efficiency = 0.4
+	}
+	mel_6 = {
+		merchants = 8
+		trade_steering = 1
+	}
+	mel_7 = {
+		global_trade_power = 0.4
+	}
+}
